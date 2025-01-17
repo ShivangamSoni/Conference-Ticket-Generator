@@ -1,3 +1,33 @@
 @tailwind base;
 @tailwind utilities;
 @tailwind components;
+
+.main__bg {
+    /*sm:bg-[url(/images/background-tablet.png)] lg:bg-[url(/images/background-desktop.png)] */
+    background-image: url(/images/pattern-squiggly-line-top.svg),
+        url(/images/pattern-lines.svg),
+        url(/images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+        url(/images/background-mobile.png);
+    background-position: right 5vh, top, left bottom, center;
+    background-size: 30vw, cover, contain, cover;
+    background-repeat: no-repeat;
+}
+
+@media screen and (min-width: 640px) {
+    .main__bg {
+        background-image: url(/images/pattern-squiggly-line-top.svg),
+            url(/images/pattern-lines.svg),
+            url(/images/pattern-squiggly-line-bottom-mobile-tablet.svg),
+            url(/images/background-tablet.png);
+    }
+}
+
+@media screen and (min-width: 1024px) {
+    .main__bg {
+        background-image: url(/images/pattern-squiggly-line-top.svg),
+            url(/images/pattern-lines.svg),
+            url(/images/pattern-squiggly-line-bottom-desktop.svg),
+            url(/images/background-desktop.png);
+        background-size: 30vw, cover, 50vw, cover;
+    }
+}
