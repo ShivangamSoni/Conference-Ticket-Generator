@@ -1,4 +1,4 @@
-import { ComponentProps, useId, useState } from "react";
+import { ComponentProps, useId, useRef, useState } from "react";
 import { InfoIcon, UploadIcon } from "../../assets";
 import Button from "./Button";
 
@@ -8,6 +8,7 @@ type PropsType = {
     info: null | string;
     file: File | null;
     onFileDrop: (file: File | null) => void;
+    onRemove: () => void;
 } & Omit<ComponentProps<"input">, "type" & "className">;
 
 export default function FileInput({
@@ -16,8 +17,10 @@ export default function FileInput({
     error,
     info,
     onFileDrop,
+    onRemove,
     ...rest
 }: PropsType) {
+    const inputRef = useRef<HTMLInputElement | null>(null);
     const id = useId();
     const fileInputId = `${id}-file`;
     const [isFileDrag, setIsFileDrag] = useState(false);
@@ -34,6 +37,7 @@ export default function FileInput({
                     id={fileInputId}
                     className="hidden"
                     type="file"
+                    ref={inputRef}
                     {...rest}
                 />
 
@@ -54,6 +58,7 @@ export default function FileInput({
                         }}
                         onDrop={(e) => {
                             e.preventDefault();
+                            setIsFileDrag(false);
                             if (e.dataTransfer.items) {
                                 const item = e.dataTransfer.items[0];
                                 if (item.kind === "file") {
@@ -78,10 +83,20 @@ export default function FileInput({
                             alt=""
                         />
                         <div className="flex items-center justify-center gap-2 md:gap-4">
-                            <Button variant="ghost" type="button">
+                            <Button
+                                variant="ghost"
+                                type="button"
+                                onClick={onRemove}
+                            >
                                 Remove Image
                             </Button>
-                            <Button variant="ghost" type="button">
+                            <Button
+                                variant="ghost"
+                                type="button"
+                                onClick={() => {
+                                    inputRef?.current?.click();
+                                }}
+                            >
                                 Change Image
                             </Button>
                         </div>
