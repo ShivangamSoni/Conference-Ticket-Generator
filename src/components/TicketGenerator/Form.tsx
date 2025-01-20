@@ -40,9 +40,13 @@ const formSchema = z.object({
         }),
 });
 
-type FormData = z.infer<typeof formSchema>;
+export type FormData = z.infer<typeof formSchema>;
 
-export default function Form() {
+export default function Form({
+    onSubmit,
+}: {
+    onSubmit: (data: FormData) => void;
+}) {
     const {
         register,
         control,
@@ -55,10 +59,6 @@ export default function Form() {
             file: undefined,
         },
     });
-
-    function onSubmit(data: FormData) {
-        console.log(data);
-    }
 
     return (
         <section className="grid gap-6 md:gap-8">
