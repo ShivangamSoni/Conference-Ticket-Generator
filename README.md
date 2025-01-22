@@ -1,50 +1,69 @@
-# React + TypeScript + Vite
+# Frontend Mentor - Conference ticket generator solution
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a solution to the [Conference ticket generator challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/conference-ticket-generator-oq5gFIU12w). Frontend Mentor challenge0s help you improve your coding skills by building realistic projects.
 
-Currently, two official plugins are available:
+## Table of contents
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   [Overview](#overview)
+    -   [The challenge](#the-challenge)
+    -   [Screenshot](#screenshot)
+    -   [Links](#links)
+-   [My process](#my-process)
+    -   [Built with](#built-with)
+-   [Author](#author)
 
-## Expanding the ESLint configuration
+## Overview
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+### The challenge
 
-- Configure the top-level `parserOptions` property like this:
+Users should be able to:
 
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+-   Complete the form with their details
+-   Receive form validation messages if:
+    -   Any field is missed
+    -   The email address is not formatted correctly
+    -   The avatar upload is too big or the wrong image format
+-   Complete the form only using their keyboard
+-   Have inputs, form field hints, and error messages announced on their screen reader
+-   See the generated conference ticket when they successfully submit the form
+-   View the optimal layout for the interface depending on their device's screen size
+-   See hover and focus states for all interactive elements on the page
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### Screenshot
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+| Screenshots                           |
+| ------------------------------------- |
+| ![](./Screenshots/Form-Mobile.png)    |
+| ![](./Screenshots/Form-Desktop.png)   |
+| ![](./Screenshots/Ticket-Mobile.png)  |
+| ![](./Screenshots/Ticket-Desktop.png) |
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
-    ...react.configs['jsx-runtime'].rules,
-  },
-})
-```
+### Links
+
+-   [Live Demo](https://shivi-conference-ticket.netlify.app/)
+
+## My process
+
+### Built with
+
+-   Semantic HTML5
+-   TailwindCSS
+-   TypeScript
+-   React
+-   React Hook Form
+-   Zod
+
+## Author
+
+-   [Shivangam Soni](https://shivangam-soni.vercel.app/)
+-   GitHub - [@ShivangamSoni](https://github.com/ShivangamSoni)
+-   LinkedIn - [shivangam-soni](https://www.linkedin.com/in/shivangam-soni/)
+-   Frontend Mentor -
+    [@ShivangamSoni](https://www.frontendmentor.io/profile/ShivangamSoni)
+-   CodePen - [ShivangamSoni](https://codepen.io/ShivangamSoni)
+-   iCodeThis - [Shivangam_Soni](https://icodethis.com/Shivangam_Soni)
+-   StackOverflow - [shivangam-soni](https://stackoverflow.com/users/16659219/shivangam-soni)
+-   ORCiD - [Shivangam Soni](https://orcid.org/0009-0002-3449-817X)
+-   Instagram - [shivangam_soni](https://www.instagram.com/shivangam_soni/)
+-   X - [ShivangamSoni](https://x.com/ShivangamSoni)
+-   Threads - [@shivangam_soni](https://www.threads.net/@shivangam_soni)
